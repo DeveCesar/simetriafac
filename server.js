@@ -19,7 +19,7 @@ app.use(bodyparserurlencode);
 app.use(cors());
 app.use('/api', router);
 app.use('/clientes', apiRoutes);
-app.use(express.static(__dirname + '/dist'));
+app.use(express.static(__dirname + '/dist/simetria-reportes'));
 /*Iniciamos rutas*/
 authRoutes(router);
 
@@ -33,7 +33,8 @@ app.use(router);
 app.listen(properties.PORT, () => {
     console.log(`Servidor reportes en puerto: ${properties.PORT}`)
 });
-app.get('/*', function(req, res){
-    res.sendFile(path.join(__dirname + '/dist/index.html'));
-})
+app.get('/*', function(req,res) {
+ 
+res.sendFile(path.join(__dirname+'/dist/simetria-reportes/index.html'));
+});
 
