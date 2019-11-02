@@ -1,0 +1,37 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    <img src="../../assets/logo.png" width="60" height="40" class="d-inline-block align-top" alt="">
+    Simetria
+  </a>
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a routerLink="addclientes" class="nav-link" routerLinkActive="active">
+        Nuevo cliente
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">2</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">3</a>
+    </li>
+  </ul>
+  <button  routerLinkActive="active" class="btn btn-outline-primary my-2 my-sm-0" routerLink="auth">Salir</button>
+</nav>
+
+<div class="container">
+  <h2>Clientes asociados:</h2><span><i class="fas fa-plus-circle"></i></span>
+  <div class="row">
+    <div class="col-sm" *ngFor="let c of clientes">
+      Clientes:
+      <ol>
+        <li>{{c.cliente}}</li>
+      </ol>
+      <button class="btn btn-primary" type="button" (click)="enviar_json(c)">
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        Generar factura a {{c.cliente}}
+      </button>
+    </div>
+
+  </div>
+</div>

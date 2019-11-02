@@ -1,0 +1,14 @@
+header {
+    padding: 15px;
+    background-color: #26d;
+    width: 100%;
+    margin: auto;
+}
+
+header h2 {
+    width: 100%;
+}
+
+span{
+    display: flex;
+}
